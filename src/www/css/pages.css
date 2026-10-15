@@ -1,0 +1,107 @@
+/* ========================================================================== 
+   Routed Page Content
+   ========================================================================== */
+
+.page-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.page-section > div {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: #52657d;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+h1 {
+    margin: 0 0 10px;
+    color: #172b4d;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.lead {
+    max-width: 700px;
+    margin: 0;
+    color: #52657d;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.welcome-card,
+.workspace-card {
+    padding: 32px;
+    border: 1px solid #d8e0ea;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(23, 43, 77, 0.05);
+}
+
+.welcome-actions,
+.workspace-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.workspace-form {
+    max-width: 720px;
+    margin-top: 28px;
+}
+
+.workspace-picker-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.workspace-form .form-group {
+    margin-bottom: 16px;
+}
+
+.workspace-form .form-control {
+    height: 38px;
+}
+
+.workspace-status {
+    margin-top: 18px;
+    padding: 10px 12px;
+    border: 1px solid #d8e0ea;
+    border-radius: 6px;
+    background: #f6f8fb;
+    color: #26384f;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.recent-workspace {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #e2e6ea;
+    color: #52657d;
+    font-size: 0.78rem;
+}
+
+.recent-workspace-label {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.recent-workspace code {
+    display: block;
+    white-space: normal;
+    word-break: break-word;
+    color: #26384f;
+    background: transparent;
+}

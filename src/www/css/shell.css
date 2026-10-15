@@ -1,0 +1,42 @@
+/* ========================================================================== 
+   Global Application Shell
+   ========================================================================== */
+
+.app-page {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+}
+
+.app-header {
+    min-height: 64px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    background: #17365d;
+    color: #fff;
+}
+
+.app-header-brand {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.app-header-product {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.app-header-product-muted {
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.82;
+}
+
+.app-main {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 32px;
+}

@@ -1,0 +1,19 @@
+/* Shared document normalization. */
+
+@import url("./components/feature-weights.css");
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #f7f9fc;
+    color: #172b4d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}

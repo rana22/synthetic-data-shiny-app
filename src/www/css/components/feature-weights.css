@@ -1,0 +1,101 @@
+.feature-weights {
+    width: 100%;
+
+    .accordion {
+        width: 100%;
+    }
+
+    .accordion-item {
+        margin-bottom: 1rem;
+        overflow: hidden;
+
+        border: 1px solid var(--bs-border-color);
+        border-radius: 0.5rem;
+    }
+
+    .accordion-button {
+        font-weight: 600;
+    }
+
+    .accordion-body {
+        padding: 0;
+    }
+
+    /* --------------------------------------------------------------
+       Weight grid
+       -------------------------------------------------------------- */
+
+    .feature-weight-row {
+        --weight-count: 1;
+
+        display: grid;
+
+        grid-template-columns:
+            180px
+            repeat(
+                var(--weight-count),
+                minmax(0, 1fr)
+            );
+
+        gap: 1.5rem;
+        align-items: center;
+
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    /* --------------------------------------------------------------
+       Header
+       -------------------------------------------------------------- */
+
+    .feature-weight-header {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+
+        background: var(--bs-tertiary-bg);
+
+        font-size: 0.875rem;
+        font-weight: 600;
+
+        .feature-weight-column-name {
+            min-width: 0;
+            white-space: nowrap;
+        }
+    }
+
+    /* --------------------------------------------------------------
+       Node
+       -------------------------------------------------------------- */
+
+    .feature-weight-node-name {
+        min-width: 0;
+
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    /* --------------------------------------------------------------
+       Slider
+       -------------------------------------------------------------- */
+
+    .feature-weight-slider {
+        min-width: 0;
+        width: 100%;
+
+        .form-group {
+            width: 100%;
+            margin: 0;
+        }
+
+        label {
+            display: none;
+        }
+
+        .irs {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
