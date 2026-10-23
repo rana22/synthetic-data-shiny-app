@@ -1,0 +1,130 @@
+.disease-source-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.disease-group {
+    overflow: hidden;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* Disease heading */
+
+.disease-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+
+    border-bottom: 1px solid #dfe3e8;
+    background: #f8f9fa;
+}
+
+.disease-group-heading {
+    min-width: 0;
+}
+
+.disease-group-title {
+    margin: 0;
+
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.3;
+}
+
+.disease-group-meta {
+    display: block;
+    margin-top: 0.2rem;
+
+    font-size: 0.8rem;
+    color: #667085;
+}
+
+/* Total */
+
+.disease-total {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+
+    white-space: nowrap;
+}
+
+.disease-total-value {
+    font-size: 1rem;
+    font-weight: 650;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.disease-total-label {
+    font-size: 0.8rem;
+    color: #667085;
+}
+
+/* Rows */
+
+.disease-node-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.55rem 1.25rem;
+
+    border-bottom: 1px solid #eef0f2;
+}
+
+.disease-node-row:last-child {
+    border-bottom: 0;
+}
+
+.disease-node-list .disease-node-row:nth-child(even) {
+    background: #fafafa;
+}
+
+/* Header */
+
+.disease-node-table-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    background: #f4f5f7;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #667085;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.disease-node-table-header span:last-child {
+    text-align: right;
+}
+
+/* Values */
+
+.disease-node-name {
+    min-width: 0;
+
+    font-size: 0.9rem;
+    color: #344054;
+}
+
+.disease-node-count {
+    min-width: 4rem;
+
+    text-align: right;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #101828;
+
+    font-variant-numeric: tabular-nums;
+}

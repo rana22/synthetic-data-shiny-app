@@ -33,7 +33,7 @@ def intra_node_server(
             )
             return
 
-        node_data = analysis_state.node_dataframes.get(
+        node_data = analysis_state.supported_node_dataframes.get(
             selected_node
         )
 

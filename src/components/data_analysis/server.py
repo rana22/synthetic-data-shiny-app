@@ -307,41 +307,18 @@ def data_analysis_server(
 ):
     """Coordinate the data-analysis workflow."""
     weights_changed = reactive.value(0)
-    node_dataframes = getattr(
-        app_state,
-        "node_dataframes",
-        {},
-    )
-
-    print("APP STATE CHECK")
-    print("node_dataframes type:", type(node_dataframes))
-
-    # if isinstance(node_dataframes, dict):
-    #     print("nodes:", list(node_dataframes.keys()))
-
-    #     for node_name, df in node_dataframes.items():
-    #         print(
-    #             f"{node_name}: "
-    #             f"shape={df.shape}, "
-    #             f"columns={list(df.columns)}"
-    #         )
-
-    if not isinstance(node_dataframes, dict):
-        node_dataframes = {}
-
-    analysis_state = AnalysisState(
-        node_dataframes=node_dataframes,
-    )
+   
+    analysis_state = app_state.analysis
 
     print("\n--- ANALYSIS STATE ---")
     print("analysis_state:", analysis_state)
     print(
         "node_dataframes type:",
-        type(analysis_state.node_dataframes),
+        type(analysis_state.supported_node_dataframes),
     )
     print(
         "nodes:",
-        list(analysis_state.node_dataframes.keys()),
+        list(analysis_state.supported_node_dataframes.keys()),
     )
 
     def update_feature_weight(
@@ -368,7 +345,7 @@ def data_analysis_server(
         ][node_name][weight_name] = value
         
 
-    for node_name, df in analysis_state.node_dataframes.items():
+    for node_name, df in analysis_state.supported_node_dataframes.items():
         print(
             f"{node_name}: "
             f"type={type(df)}, "
@@ -409,7 +386,7 @@ def data_analysis_server(
         input,
         output,
         session,
-        analysis_state=analysis_state,
+        app_state=app_state,
     )
 
     # @render.ui

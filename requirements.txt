@@ -5,7 +5,6 @@ openpyxl>=3.1,<4
 pyarrow>=18,<23
 
 PyYAML
-neo4j
 python-dotenv
 matplotlib
 uvicorn
@@ -20,3 +19,4 @@ numpy>=2,<3
 scikit-learn>=1.5,<2
 rapidfuzz>=3.9,<4
 requests>=2.32,<3
+neo4j>=5.20,<7

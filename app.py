@@ -31,6 +31,18 @@ from src.components.data_analysis.ui import (
 from src.components.data_analysis.server import (
     data_analysis_server,
 )
+
+from src.pages.inter_node_analysis import (
+    inter_node_analysis_page,
+)
+
+from src.components.data_analysis.inter_node import (
+    inter_node_server,
+)
+from src.components.data_analysis.state import (
+    AnalysisState,
+)
+
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "src" / "www"
 
@@ -47,6 +59,18 @@ class ApplicationState:
     )
     selected_dataset: Path | None = None
     node_dataframes: dict[str, pd.DataFrame] | None = None
+
+    runtime_credentials: dict[str, str] = field(
+        default_factory=dict
+    )
+    selected_disease_term: str | None = None
+    selected_disease_nodes: tuple[str, ...] = ()
+
+    # Shared state for the complete Analysis workflow.
+    analysis: AnalysisState = field(
+        default_factory=AnalysisState
+    )
+
 application_state = ApplicationState()
 
 # ---------------------------------------------------------------------------
@@ -79,6 +103,10 @@ def make_shiny_app(page_factory: PageFactory, server_factory) -> App:
 ROUTES: dict[str, App] = {
     "/create-project": make_shiny_app(create_project_page, create_project_server),
     "/load-project": make_shiny_app(load_project_page, load_project_server),
+    "/project/analysis/inter-node/": make_shiny_app(
+        inter_node_analysis_page,
+        inter_node_server,
+    ),
     "/project/analysis/": make_shiny_app(
         data_analysis_ui,
         data_analysis_server,

@@ -37,9 +37,10 @@ def create_workspace(root: str | Path, project_name: str) -> Workspace:
 
     # Create project metadata if it does not already exist.
     metadata_path = root_path / "project_metadata.json"
-    now = datetime.now()
-    print(f"time {now} path = {metadata_path}")
+
     if not metadata_path.exists():
+        now = datetime.now(timezone.utc).isoformat()
+
         metadata = {
             "project_name": project_name,
             "created_at": now,
@@ -47,11 +48,33 @@ def create_workspace(root: str | Path, project_name: str) -> Workspace:
             "workspace_version": "1.0",
             "project_database": "project.db",
         }
-        print(f"{json.dumps(metadata, indent=2)}")
-        raise ValueError(
-            "The selected folder is not a valid project workspace. "
-            "project_metadata.json was not found."
+
+        metadata_path.write_text(
+            json.dumps(metadata, indent=2),
+            encoding="utf-8",
         )
+
+        print(f"Created metadata: {metadata_path}")
+        
+    # if not metadata_path.exists():
+    #     metadata = {
+    #         "project_name": project_name,
+    #         "created_at": now,
+    #         "updated_at": now,
+    #         "workspace_version": "1.0",
+    #         "project_database": "project.db",
+    #     }
+
+    #     root_path.mkdir(parents=True, exist_ok=True)
+    #     metadata_path.write_text(
+    #         json.dumps(metadata, indent=2),
+    #         encoding="utf-8",
+    #     )
+    #     print(f"{json.dumps(metadata, indent=2)}")
+        # raise ValueError(
+        #     "The selected folder is not a valid project workspace. "
+        #     "project_metadata.json was not found."
+        # )
 
     if not metadata_path.exists():
         now = datetime.now(timezone.utc).isoformat()

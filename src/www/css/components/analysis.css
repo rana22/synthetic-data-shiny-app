@@ -1,0 +1,10 @@
+.inter-node-analysis {
+    .shiny-data-grid {
+        td {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

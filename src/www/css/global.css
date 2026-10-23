@@ -1,6 +1,8 @@
 /* Shared document normalization. */
 
 @import url("./components/feature-weights.css");
+@import url("./components/data-source.css");
+@import url("./components/analysis.css");
 html,
 body {
     margin: 0;

@@ -1,0 +1,174 @@
+/* ============================================================
+   Disease Support
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Node selection table
+   ------------------------------------------------------------ */
+
+.disease-support__select-column {
+    width: 2.5rem;
+    text-align: center;
+}
+
+.disease-support__select-column .form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: auto;
+    margin: 0;
+    padding-left: 0;
+}
+
+.disease-support__select-column .form-check-input {
+    float: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------
+   Node table
+   ------------------------------------------------------------ */
+
+.disease-support__table th {
+    color: var(--bs-secondary-color);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.disease-support__table td {
+    vertical-align: middle;
+}
+
+.disease-support__table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.disease-support__metric-value {
+    margin-right: 10px;
+}
+
+.disease-support__close {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+
+    z-index: 10;
+}
+
+/* ============================================================
+   Disease Support - Summary metrics
+   ============================================================ */
+
+.disease-support__metrics {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+
+/* ------------------------------------------------------------
+   Card
+   ------------------------------------------------------------ */
+
+.disease-support__metric {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.65rem;
+
+    background: var(--bs-body-bg);
+
+    box-shadow: none;
+}
+
+.disease-support__metric .card-body {
+    padding: 1rem 1.1rem;
+}
+
+
+/* ------------------------------------------------------------
+   Icon
+   ------------------------------------------------------------ */
+
+.disease-support__metric-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+/* All terms */
+
+.disease-support__metric-icon--total {
+    background: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+}
+
+
+/* Supported */
+
+.disease-support__metric-icon--supported {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* Limited */
+
+.disease-support__metric-icon--limited {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+
+/* Unsupported */
+
+.disease-support__metric-icon--unsupported {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ------------------------------------------------------------
+   Value
+   ------------------------------------------------------------ */
+
+.disease-support__metric-value {
+    margin-bottom: 0.15rem;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.1;
+
+    color: var(--bs-body-color);
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ------------------------------------------------------------
+   Label
+   ------------------------------------------------------------ */
+
+.disease-support__metric-label {
+    font-size: 0.8rem;
+    line-height: 1.25;
+
+    color: var(--bs-secondary-color);
+}

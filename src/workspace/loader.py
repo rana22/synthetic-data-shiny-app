@@ -6,7 +6,11 @@ import sqlite3
 from pathlib import Path
 import json
 from datetime import datetime, timezone
-from .models import Workspace, ProjectMetadata
+from .models import (
+    DataSourceConfig,
+    Workspace,
+    ProjectMetadata
+)
 
 
 def load_project_metadata(
@@ -62,6 +66,35 @@ def load_project_metadata(
             "Project metadata is missing required fields: "
             + ", ".join(sorted(missing))
         )
+    # ------------------------------------------------------------------
+    # Data sources
+    #
+    # Older projects may not have data_sources yet, so default to an
+    # empty list for backward compatibility.
+    # ------------------------------------------------------------------
+
+    raw_sources = data.get(
+        "data_sources",
+        [],
+    )
+
+    data_sources = tuple(
+        DataSourceConfig(
+            id=str(source["id"]),
+            name=str(source["name"]),
+            source_type=str(source["source_type"]),
+            uri=str(source["uri"]),
+            database=source.get("database"),
+            username=source.get("username"),
+            password_encrypted=source.get(
+                "password_encrypted"
+            ),
+            enabled=bool(
+                source.get("enabled", True)
+            ),
+        )
+        for source in raw_sources
+    )
 
     metadata = ProjectMetadata(
         project_name=data["project_name"],
@@ -78,6 +111,7 @@ def load_project_metadata(
             "property_model_url",
             "",
         ),
+        data_sources=data_sources,
     )
     return metadata
 

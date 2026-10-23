@@ -13,6 +13,13 @@ from ..features.categorical import CategoricalFeatureAnalyzer
 from ..features.substring import SubstringFeatureAnalyzer
 from ..features.cluster import ClusteringFeatureAnalyzer
 
+class _NullDocAlignmentModel:
+    def score(
+        self,
+        a: str,
+        b: str,
+    ) -> float:
+        return 0.0
 
 class PairwiseRelationshipEvaluator(FeatureBase):
     """Evaluate relationships between properties within one node."""
@@ -26,8 +33,11 @@ class PairwiseRelationshipEvaluator(FeatureBase):
         self.weights = weights or {}
 
         # Doc alignment is not currently enabled.
-        self.doc_model = None
+        # self.doc_model = None
 
+        self.doc_model = (
+            _NullDocAlignmentModel()
+        )
         self.categorical = CategoricalFeatureAnalyzer(
             node_schema=self.node_schema,
             doc_model=self.doc_model,

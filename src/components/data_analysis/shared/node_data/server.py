@@ -19,7 +19,7 @@ def node_data_server(
     @reactive.effect
     def _initialize_node_selector():
         node_names = list(
-            analysis_state.node_dataframes.keys()
+            analysis_state.supported_node_dataframes.keys()
         )
 
         if not node_names:

@@ -4,3 +4,6 @@ src/__pycache__/__init__.cpython-312.pyc
 /src/components/data_analysis/features/__pycache__
 **/__pycache__/
 *.py[cod]
+.DS_Store
+/.venv
+src/.DS_Store
